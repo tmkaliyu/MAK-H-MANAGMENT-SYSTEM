@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--TITLE-->
+<title>MAK-H</title>
+
+<!--SHORTCUT ICON-->
+<link rel="shortcut icon" href="images/MAK-H.png" />
+
+<!--META TAGS-->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<!--JQUERY-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+<!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--FILES-->
+<link rel="stylesheet" href="managment.css">
+<link rel="stylesheet" href="fontawesome/css/all.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+<script  src="managment.js"></script>
+<!--Bootstrap-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+</head>
+<body style="background-color:#fff ;">
+<div id="mySidenav" class="sidenav">
+<div class="profileDisplay" >
+    <img class="prof animate" src="images/profileAl_ameen.jpeg" alt=""><br>
+    <span>Al-ameen Sani</span> <br>
+    <span>DevOps</span><br>
+    <span>Status:<div id="activestatus"></div> <div id="inactivestatus" class="hidden"></div></span>
+
+</div>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#" id="dashA" onclick="navDashboard()"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+  <a href="#" id="actA" onclick="pManager()"><i class="fas fa-chart-line"></i> Product Maintenance</a>
+  <a href="#" id="carregA" onclick="bManager()"><i class="fas fa-database"></i> Bike Maintenance</a>
+  <a href="#" id="updateA" onclick="oderEntry()"><i class="fab fa-stack-exchange"></i> Order Entry</a>
+  <a href="#" id="payA" onclick="sData()"><i class="far fa-credit-card"></i> Staff Data</a>
+  <a href="#" id="repA" onclick="navReport()"><i class="fas fa-list-ul"></i> Report</a>
+  <a href="#" id="userA" onclick="navUsers()"><i class="fas fa-users"></i> Users</a>
+</div>
+
+<div id="main">
+    <img class="logo animate" src="images/MAK-H.png" alt=""> <span style="font-size:30px;cursor:pointer; color: #ffffff; float:right;" onclick="openNav()">&#9776; </span>
+</div>
+<div id="contentDiv" class="clearfix">
+ <div id="proMainDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
+    <span style="font-size: 25px;">Products </span>
+    <hr>
+    <table id="activitiesTable" class="table table-responsive table-strip table-borderd">
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Full Name</th>
+                <th>Staff ID</th>
+                <th>Activities</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>1</td>
+                <td>Ahammad Usman</td>
+                <td>ZIM0024</td>
+                <td>UserCreation new staff added</td>
+                <td>19/12/2021</td>
+                <td><button class="btn btn-sm btn-success">View More</button></td>
+            </tr>           
+            <tr>
+                <td>2</td>
+                <td>Umar Usman</td>
+                <td>ZIM0084</td>
+                <td>Vehicle new location enterd</td>
+                <td>19/12/2021</td>
+                <td><button class="btn btn-sm btn-success">View More</button></td>
+            </tr>           
+            <tr>
+                <td>3</td>
+                <td>JJamila Usman</td>
+                <td>ZIM0344</td>
+                <td>Vehicle new location enterd</td>
+                <td>19/12/2021</td>
+                <td><button class="btn btn-sm btn-success">View More</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+ </div>
+ <div id="orderEntryDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
+    <span style="font-size: 25px;">Order Entery  </span>
+    <hr>
+    <div id="divdate" class="col-sm-3 ">
+        <div class="form-group form-float">
+            <div class="form-line">
+                <label>Retrieve Details </label>
+                 <input type="text" class="form-control" placeholder="Payment ID" />
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2 ">
+        <div class="form-group">
+            <button type="button" onclick="retriveReport()" id="button-1" class="btn  btn-md waves-effect " style="margin-top:25px; background-color: #f9ae7d;color: white;">Search</button>
+        </div>
+    </div>
+    <div id="loadingid" class="hidden">
+        <div class="loader">
+            <div class="preloader  pl-size-sm">
+                <div class="spinner-layer pl-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="padding:0px; border:1px solid wheat">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #f9ae7d; padding:10px">
+        <span>Verhicle Details</span>
+    </div>
+     
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:10px">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>First Name</label>
+            <input type="text" placeholder="First Name" class="form-control"  disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Middle Name</label>
+            <input type="text" placeholder="Middle Name" class="form-control" disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Last Name</label>
+            <input type="text" placeholder="Last Name" class="form-control" disabled/>
+            <br>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Amount Paid</label>
+            <input type="number" placeholder="Amount paid ₦" class="form-control" disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Payment Type</label>
+            <input type="text" class="form-control" disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Payment Mode</label>
+            <input type="text" class="form-control" disabled/>
+            <br>
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Payment Date On Slip</label>
+            <input type="date" placeholder="date" class="form-control" disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Log ID</label>
+            <input type="text" placeholder="Car Log ID" class="form-control" disabled/>
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Model</label>
+            <input type="text" placeholder="Car Model" class="form-control" disabled/><br>
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Company</label>
+            <input type="text" placeholder="Car Company" class="form-control" disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Puchase Type</label>
+            <input type="text" class="form-control" disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Previous Location</label>
+            <input type="text" class="form-control" disabled/>
+            <br>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Destination</label>
+            <input type="text" class="form-control" disabled/>
+            
+        </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Current Location</label>
+            <select class="form-control">
+                <option value="0">-- Location --</option>
+                <option value="1">Border America</option>
+                <option value="2">Border UK</option>
+                <option value="3">Border Germany</option>
+                <option value="4">Border Cotono</option>
+            </select>
+            
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Next Location</label>
+            <select class="form-control">
+                <option value="0">-- Location --</option>
+                <option value="1">Border America</option>
+                <option value="2">Border UK</option>
+                <option value="3">Border Germany</option>
+                <option value="4">Border Cotono</option>
+            </select>
+            
+        </div>
+        <div style="padding:30px" class="btnclass col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          
+            <button href="#" class="btnclose pull-right btn "  style="background-color: #f9ae7d; color: white;"> Submit</button>
+          </div>
+    </div>
+    </div>
+ </div> 
+ <div id="dashboardDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
+
+ </div>
+ <div id="bikeMainDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
+    <span style="font-size: 25px;">Bike Maintainance </span>
+    <hr>
+    <div id="divdate" class="col-sm-3 ">
+        <div class="form-group form-float">
+            <div class="form-line">
+                <label>Retrieve Details </label>
+                 <input type="text" class="form-control" placeholder="Payment ID" />
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2 ">
+        <div class="form-group">
+            <button type="button" onclick="retriveReport()" id="button-1" class="btn  btn-md waves-effect " style="margin-top:25px; background-color: #f9ae7d;color: white;">Search</button>
+        </div>
+    </div>
+    <div id="loadingid" class="hidden">
+        <div class="loader">
+            <div class="preloader  pl-size-sm">
+                <div class="spinner-layer pl-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12     " style="padding:0px; border:1px solid wheat">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #f9ae7d; padding:10px">
+        <span>Verhicle Details</span>
+    </div>
+     
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:10px">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>First Name</label>
+            <input type="text" placeholder="First Name" class="form-control"  disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Middle Name</label>
+            <input type="text" placeholder="Middle Name" class="form-control" disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Last Name</label>
+            <input type="text" placeholder="Last Name" class="form-control" disabled/>
+            <br>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Amount Paid</label>
+            <input type="number" placeholder="Amount paid ₦" class="form-control" disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Payment Type</label>
+            <input type="text" class="form-control" disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Payment Mode</label>
+            <input type="text" class="form-control" disabled/>
+            <br>
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Payment Date On Slip</label>
+            <input type="date" placeholder="date" class="form-control" disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Log ID</label>
+            <input type="text" placeholder="Car Log ID" class="form-control" disabled/>
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Model</label>
+            <input type="text" placeholder="Car Model" class="form-control" disabled/><br>
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Company</label>
+            <input type="text" placeholder="Car Company" class="form-control" disabled/>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Puchase Type</label>
+            <input type="text" class="form-control" disabled/>
+        </div> 
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Current Location</label>
+            <select class="form-control">
+                <option value="0">-- Location --</option>
+                <option value="1">Border America</option>
+                <option value="2">Border UK</option>
+                <option value="3">Border Germany</option>
+                <option value="4">Border Cotono</option>
+            </select>
+            <br>
+        </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Destination</label>
+            <select class="form-control">
+                <option value="0">-- Location --</option>
+                <option value="1">Border America</option>
+                <option value="2">Border UK</option>
+                <option value="3">Border Germany</option>
+                <option value="4">Border Cotono</option>
+            </select>
+        </div>
+        <div style="padding:30px" class="btnclass col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          
+            <button href="#" class="btnclose pull-right btn "  style="background-color: #f9ae7d; color: white;"> Submit</button>
+          </div>
+    </div>
+
+    </div>
+ </div>
+ <div id="staffDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
+    <span style="font-size: 25px;">Staff Data Entery</span>
+    <hr>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12     " style="padding:0px; border:1px solid wheat">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #f9ae7d; padding:10px">
+        <span>Payment Information </span>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <br>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>First Name</label>
+            <input type="text" placeholder="First Name" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Middle Name</label>
+            <input type="text" placeholder="Middle Name" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Last Name</label>
+            <input type="text" placeholder="Last Name" class="form-control" />
+            <br>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Amount Paid</label>
+            <input type="number" placeholder="Amount paid ₦" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Payment Type</label>
+            <select class="form-control">
+                <option value="0">-- Payment Type --</option>
+                <option value="1">Full</option>
+                <option value="2">Depost</option>
+                <option value="3">Instalment</option>
+            </select>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Payment Mode</label>
+            <select class="form-control">
+                <option value="0">-- Payment Type --</option>
+                <option value="1">Cash</option>
+                <option value="2">Cheqe</option>
+                <option value="3">Transfer</option>
+                <option value="4">POS</option>
+            </select>
+            <br>
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Payment Date On Slip</label>
+            <input type="date" placeholder="date" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Log ID</label>
+            <input type="text" placeholder="Car Log ID" class="form-control" />
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Model</label>
+            <input type="text" placeholder="Car Model" class="form-control" /><br>
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Company</label>
+            <input type="text" placeholder="Car Company" class="form-control" />
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Car Puchase Type</label>
+            <select class="form-control">
+                <option value="0">-- Puchase Type --</option>
+                <option value="1">Forign </option>
+                <option value="2">Local</option>
+                <option value="3">Localy Used</option>
+            </select>
+        </div>
+        <div style="padding:30px" class="btnclass col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          
+            <button href="#" class="btnclose pull-right btn " style="background-color: #f9ae7d;color: white;" > Submit</button>
+            <button href="#" class="btnprint pull-right btn btn-defult" style="margin-right:10px ;"><i class="fa fa-print"></i> Print</button>
+           
+          </div>
+    </div>
+    </div>
+ </div>
+ <div id="reportDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
+
+    <span style="font-size: 25px;">Report</span>
+    <hr>
+    <div id="divdate" class="col-sm-3 ">
+        <div class="form-group form-float">
+            <div class="form-line">
+                <label>Report Type</label>
+                <select id="reportType" class="form-control">
+                    <option value="">-- Report Type --</option>
+                    <option value="1">Payment</option>
+                    <option value="2">Report</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="searchDiv hidden">
+        
+    <div id="divdate" class="col-sm-3 ">
+        <div class="form-group form-float">
+            <div class="form-line">
+                <label>Payment Type</label>
+                <select id="reportType" class="form-control">
+                    <option value="0">All</option>
+                    <option value="1">Full</option>
+                    <option value="2">Deposit</option>
+                    <option value="3">Instalment</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="divdate" class="col-sm-3 ">
+        <div class="form-group form-float">
+            <div class="form-line">
+                <label>Car Report Type</label>
+                <select id="reportType" class="form-control">
+                    <option value="0">All</option>
+                    <option value="1">At Deport Forign</option>
+                    <option value="2">At Deport Local</option>
+                    <option value="3">At Border Local</option>
+                    <option value="4">At Branch</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="divdate" class="col-sm-3 ">
+        <div class="form-group form-float">
+            <div class="form-line">
+                <label>From</label> <input class="form-control" id="startDate" type="date">
+
+            </div>
+        </div>
+        <span id="apperror-sDate" for="appID" class="hidden" style="margin-top: -10px; margin-left: 20px; color: red; position: absolute;">From Date is required </span>
+
+    </div>
+    <div id="divdate" class="col-sm-3 ">
+        <div class="form-group form-float">
+            <div class="form-line">
+                <label>To</label><input class="form-control" id="endDate" type="date">
+
+            </div>
+        </div>
+        <span id="apperror-eDate" for="appID" class="hidden" style="margin-top:-10px; margin-left:20px; color:red;position:absolute;">To Date is required </span>
+
+    </div>
+   
+    <div class="col-sm-2 ">
+        <div class="form-group">
+            <button type="button" onclick="retriveReport()" id="button-1" class="btn btn-success btn-md waves-effect " style="margin-top:23px">Search</button>
+        </div>
+    </div>
+    </div>
+    <div class="loadingid hidden" style="margin-top:20px">
+        <div class="loader">
+            <div class="preloader  pl-size-sm">
+                <div class="spinner-layer pl-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="carReport" class="hidden">
+        <table id="reportTablecar" class="table table-responsive table-strip table-borderd">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Car Name</th>
+                    <th>Car Model</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>1</td>
+                    <td>Benz</td>
+                    <td>GLK500</td>
+                    <td>12,000,000</td>
+                    <td>19/12/2021</td>
+                </tr>           
+                <tr>
+                    <td>2</td>
+                    <td>Benz</td>
+                    <td>GLK500</td>
+                    <td>12,000,000</td>
+                    <td>19/12/2021</td>
+                </tr>           
+                <tr>
+                    <td>3</td>
+                    <td>Benz</td>
+                    <td>GLK500</td>
+                    <td>12,000,000</td>
+                    <td>19/12/2021</td>
+                </tr>
+    
+            </tbody>
+        </table>
+    </div>
+    <div id="payReport" class="hidden">
+        <table id="reportTablepay" class="table table-responsive table-strip table-borderd">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Full Name</th>
+                    <th>Car Model</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>1</td>
+                    <td>Jamal Malik</td>
+                    <td>GLK500</td>
+                    <td>12,000,000</td>
+                    <td>19/12/2021</td>
+                </tr>           
+                <tr>
+                    <td>2</td>
+                    <td>Ben Zama Madrid</td>
+                    <td>GLK500</td>
+                    <td>12,000,000</td>
+                    <td>19/12/2021</td>
+                </tr>           
+                <tr>
+                    <td>3</td>
+                    <td>Crous Toni</td>
+                    <td>GLK500</td>
+                    <td>12,000,000</td>
+                    <td>19/12/2021</td>
+                </tr>
+    
+            </tbody>
+        </table>
+    </div>
+ </div>
+ <div id="usersDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  hidden">
+
+    <span style="font-size: 25px;">Manage Users</span>
+    <hr>
+   
+    <div class="loadingid hidden" style="margin-top:20px">
+        <div class="loader">
+            <div class="preloader  pl-size-sm">
+                <div class="spinner-layer pl-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="usersReport" class="">
+        <table id="reportTablecar" class="table table-responsive table-strip table-borderd">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Staff ID</th>
+                    <th>Full Name</th>
+                    <th>Role</th>
+                    <th>Active</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>1</td>
+                    <td>ZIMAN001</td>
+                    <td>Mustapha Isha </td>
+                    <td>Registration</td>
+                    <td><input type="checkbox" checked/></td>
+                    <td class="dropdown"> 
+                        <center>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bars"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" class="waves-effect waves-block edit-user" data-user-id="@user.Id" data-toggle="modal" data-target="#UserEditModal"><i class="fas fa-edit"></i>Edit</a></li>
+                                            <li><a href="#" class="waves-effect waves-block delete-user" data-user-id="@user.Id" data-user-name="@user.UserName"><i class="fas fa-trash-alt"></i>Delete</a></li>
+                                            <li><a href="#" class="waves-effect waves-block reset-password" data-user-id="@user.Id" data-user-name="@user.UserName" data-toggle="modal" data-target="#PasswordChangeModal"><i class="fas fa-key"></i>Change Password</a></li>
+                                        </ul>
+                        </center>
+                    </td>
+                </tr> 
+                <tr>
+                    <td>1</td>
+                    <td>ZIMAN001</td>
+                    <td>Mustapha Isha </td>
+                    <td>Registration</td>
+                    <td><input type="checkbox" checked/></td>
+                    <td class="dropdown"> 
+                        <center>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bars"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" class="waves-effect waves-block edit-user" data-user-id="@user.Id" data-toggle="modal" data-target="#UserEditModal"><i class="fas fa-edit"></i> Edit</a></li>
+                                            <li><a href="#" class="waves-effect waves-block delete-user" data-user-id="@user.Id" data-user-name="@user.UserName"><i class="fas fa-trash-alt"></i> Delete</a></li>
+                                            <li><a href="#" class="waves-effect waves-block reset-password" data-user-id="@user.Id" data-user-name="@user.UserName" data-toggle="modal" data-target="#PasswordChangeModal"><i class="fas fa-key"></i> Reset Password</a></li>
+                                        </ul>
+                        </center>
+                    </td>
+                </tr> 
+                <tr>
+                    <td>1</td>
+                    <td>ZIMAN001</td>
+                    <td>Mustapha Isha </td>
+                    <td>Registration</td>
+                    <td><input type="checkbox" checked/></td>
+                    <td class="dropdown"> 
+                        <center>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bars"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" class="waves-effect waves-block edit-user" data-user-id="@user.Id" data-toggle="modal" data-target="#UserEditModal"><i class="fas fa-edit"></i>Edit</a></li>
+                                            <li><a href="#" class="waves-effect waves-block delete-user" data-user-id="@user.Id" data-user-name="@user.UserName"><i class="fas fa-trash-alt"></i>Delete</a></li>
+                                            <li><a href="#" class="waves-effect waves-block reset-password" data-user-id="@user.Id" data-user-name="@user.UserName" data-toggle="modal" data-target="#PasswordChangeModal"><i class="fas fa-key"></i>Change Password</a></li>
+                                        </ul>
+                        </center>
+                    </td>
+                </tr>           
+                
+    
+            </tbody>
+        </table>
+    </div>
+    <div id="payReport" class="hidden">
+        <table id="reportTablepay" class="table table-responsive table-strip table-borderd">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Full Name</th>
+                    <th>Car Model</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>1</td>
+                    <td>Jamal Malik</td>
+                    <td>GLK500</td>
+                    <td>12,000,000</td>
+                    <td>19/12/2021</td>
+                </tr>           
+                <tr>
+                    <td>2</td>
+                    <td>Ben Zama Madrid</td>
+                    <td>GLK500</td>
+                    <td>12,000,000</td>
+                    <td>19/12/2021</td>
+                </tr>           
+                <tr>
+                    <td>3</td>
+                    <td>Crous Toni</td>
+                    <td>GLK500</td>
+                    <td>12,000,000</td>
+                    <td>19/12/2021</td>
+                </tr>
+    
+            </tbody>
+        </table>
+    </div>
+ </div>
+</div>
+</body>
+</html>

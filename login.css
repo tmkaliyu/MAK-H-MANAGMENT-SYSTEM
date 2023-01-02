@@ -1,0 +1,41 @@
+:root{
+    --primary:#fc640c;
+    --white:#fff;
+    --black:#000;
+    scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
+    scrollbar-width: thin !important;
+    }
+
+
+#login{
+    margin-top:180px;
+    width:30%;
+    border-radius: 25px 25px 25px 25px;
+    background-color: var(--primary);
+  }
+  .logo{
+      width: 100px;
+      height: 100px;
+  }
+ input{
+    width:80%;
+    padding:1rem;
+    border:0;
+    outline:none;
+    background-color:#ddd;
+    box-sizing:border-box;
+    }
+    .btnsub{
+        background:#fc640c;
+        border:2px solid #fff;
+        color:#fff;
+        border-radius:5px;
+        padding:10px 20px;
+        float: right;
+        margin-right: 45px;
+        }
+        
+        .btnsub:hover{
+        background-color:#fff;
+        color:#000;
+        }
