@@ -54,11 +54,12 @@
 </div>
 
 <div id="main">
-    <img class="logo animate" src="/Images/MAK-H.png" alt=""> <span style="font-size:30px;cursor:pointer; color: #ffffff; float:right;" onclick="openNav()">&#9776; </span>
+    <img class="logo animate" src="/Images/MAK-H.png" alt=""> 
+    <span class="opensymbol" onclick="openNav()">&#9776; </span>
 </div>
 <div id="contentDiv" class="clearfix">
  <div id="proMainDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
-    <span style="font-size: 25px;">Products </span>
+    <span class="headText">Products </span>
     <hr>
     <table id="activitiesTable" class="table table-responsive table-strip table-borderd">
         <thead>
@@ -102,134 +103,75 @@
     </table>
  </div>
  <div id="orderEntryDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
-    <span style="font-size: 25px;">Order Entery  </span>
+    <span class="headText">Order Entery  </span>
     <hr>
-    <div id="divdate" class="col-sm-3 ">
+    <div id="divridersList" class="col-sm-3 ">
+            <div class="form-line">
+                <label for="ridersList">Riders List </label>
+                <select  id="ridersList" class="form-control">
+                    <option>--select--</option>
+                    <option>Muhammad</option>
+                    <option>an Hajiya</option>
+                    <option>Kabir</option>
+                </select> 
+            </div>
+    </div>
+    <div id="divbikeNumber" class="col-sm-3 ">
         <div class="form-group form-float">
             <div class="form-line">
-                <label>Retrieve Details </label>
-                 <input type="text" class="form-control" placeholder="Payment ID" />
+                <label for="bikeNumber">Riders List </label>
+                <select  id="bikeNumber" class="form-control">
+                    <option>--select--</option>
+                    <option>BVC45ER</option>
+                    <option>BVE54CV</option>
+                    <option>BVC21XZ</option>
+                </select> 
+            </div>
+        </div>
+    </div>
+    <div id="divnumberOrder" class="col-sm-3 ">
+        <div class="form-group form-float">
+            <div class="form-line">
+                <label for="numberOrder">Number of orders </label>
+                 <input type="number" id="numberOrder" class="form-control" placeholder="Number of orders" />
+            </div>
+        </div>
+    </div>
+    <div id="divdeliveryCharges" class="col-sm-3 ">
+        <div class="form-group form-float">
+            <div class="form-line">
+                <label for="deliveryCharges">Delivery Charges </label>
+                 <input type="number" id="deliveryCharges" class="form-control" value="500" disabled />
+            </div>
+        </div>
+    </div>
+    <div id="divtotalAmount" class="col-sm-3 ">
+        <div class="form-group form-float">
+            <div class="form-line">
+                <label for="totalAmount">Total Amount</label>
+                 <input type="number" id="totalAmount" class="form-control" disabled />
+            </div>
+        </div>
+    </div>
+    <div id="divriderCommission" class="col-sm-3 ">
+        <div class="form-group form-float">
+            <div class="form-line">
+                <label for="riderCommission">Rider Commission </label>
+                 <input type="number" id="riderCommission" class="form-control" disabled />
             </div>
         </div>
     </div>
     <div class="col-sm-2 ">
         <div class="form-group">
-            <button type="button" onclick="retriveReport()" id="button-1" class="btn  btn-md waves-effect " style="margin-top:25px; background-color: #f9ae7d;color: white;">Search</button>
+            <button type="button" id="submitOrder" onclick="submitRecord()" id="button-1" class="btn  btn-md waves-effect " >Submit</button>
         </div>
-    </div>
-    <div id="loadingid" class="hidden">
-        <div class="loader">
-            <div class="preloader  pl-size-sm">
-                <div class="spinner-layer pl-green">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="padding:0px; border:1px solid wheat">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #f9ae7d; padding:10px">
-        <span>Verhicle Details</span>
-    </div>
-     
-     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:10px">
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>First Name</label>
-            <input type="text" placeholder="First Name" class="form-control"  disabled/>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Middle Name</label>
-            <input type="text" placeholder="Middle Name" class="form-control" disabled/>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Last Name</label>
-            <input type="text" placeholder="Last Name" class="form-control" disabled/>
-            <br>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Amount Paid</label>
-            <input type="number" placeholder="Amount paid ₦" class="form-control" disabled/>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Payment Type</label>
-            <input type="text" class="form-control" disabled/>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Payment Mode</label>
-            <input type="text" class="form-control" disabled/>
-            <br>
-        </div>
-        
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Payment Date On Slip</label>
-            <input type="date" placeholder="date" class="form-control" disabled/>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Car Log ID</label>
-            <input type="text" placeholder="Car Log ID" class="form-control" disabled/>
-        </div>
-        
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Car Model</label>
-            <input type="text" placeholder="Car Model" class="form-control" disabled/><br>
-        </div>
-        
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Car Company</label>
-            <input type="text" placeholder="Car Company" class="form-control" disabled/>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Car Puchase Type</label>
-            <input type="text" class="form-control" disabled/>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Previous Location</label>
-            <input type="text" class="form-control" disabled/>
-            <br>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Destination</label>
-            <input type="text" class="form-control" disabled/>
-            
-        </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Current Location</label>
-            <select class="form-control">
-                <option value="0">-- Location --</option>
-                <option value="1">Border America</option>
-                <option value="2">Border UK</option>
-                <option value="3">Border Germany</option>
-                <option value="4">Border Cotono</option>
-            </select>
-            
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <label>Next Location</label>
-            <select class="form-control">
-                <option value="0">-- Location --</option>
-                <option value="1">Border America</option>
-                <option value="2">Border UK</option>
-                <option value="3">Border Germany</option>
-                <option value="4">Border Cotono</option>
-            </select>
-            
-        </div>
-        <div style="padding:30px" class="btnclass col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          
-            <button href="#" class="btnclose pull-right btn "  style="background-color: #f9ae7d; color: white;"> Submit</button>
-          </div>
-    </div>
     </div>
  </div> 
  <div id="dashboardDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
 
  </div>
  <div id="bikeMainDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
-    <span style="font-size: 25px;">Bike Maintainance </span>
+    <span class="font-size: 25px;">Bike Maintainance </span>
     <hr>
     <div id="divdate" class="col-sm-3 ">
         <div class="form-group form-float">

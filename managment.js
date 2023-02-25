@@ -214,7 +214,7 @@ function navUsers(){
         updateA.style.color = 'black';
         carregA.style.color = 'black';
         payA.style.color = 'black';
-        repA.style.color = 'white';
+        repA.style.color = 'black';
         userA.style.color = 'white';
         
     }

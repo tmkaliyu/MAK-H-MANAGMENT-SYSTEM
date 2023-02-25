@@ -1,0 +1,9 @@
+.headText{
+    font-size: 25px;
+}
+.opensymbol{
+    font-size:30px;
+    cursor:pointer; 
+    color: #ffffff;
+     float:right;
+}
