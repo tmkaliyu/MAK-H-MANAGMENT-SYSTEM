@@ -36,13 +36,6 @@
 </head>
 <body style="background-color:#fff ;">
 <div id="mySidenav" class="sidenav">
-<div class="profileDisplay" >
-    <img class="prof animate" src="/Images/profile.jpg" alt=""><br>
-    <span>Admin</span> <br>
-    <span>DevOps</span><br>
-    <span>Status:<div id="activestatus"></div> <div id="inactivestatus" class="hidden"></div></span>
-
-</div>
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#" id="dashA" onclick="navDashboard()"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
   <a href="#" id="actA" onclick="pManager()"><i class="fas fa-chart-line"></i> Product Maintenance</a>
@@ -54,7 +47,9 @@
 </div>
 
 <div id="main">
-    <img class="logo animate" src="/Images/MAK-H.png" alt=""> 
+    <img class="logo animate" src="/Images/MAK-H.png" alt="">
+    <img class="prof animate pull-right" id="profilePic" src="/Images/profile.jpg" alt=""> 
+    <span class="pull-right" id="profilename">Admin</span>
     <span class="opensymbol" onclick="openNav()">&#9776; </span>
 </div>
 <div id="contentDiv" class="clearfix">

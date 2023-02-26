@@ -54,7 +54,10 @@ body {
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
+  .sidenav {
+    padding-top: 15px;
+    height: 50%;
+  }
   .sidenav a {font-size: 18px;}
 }
 .logo{
@@ -138,4 +141,13 @@ body {
 }
 .loadingid{
   margin-top:20px;
+}
+#profilePic{
+  margin-right: 60px;
+  margin-top: -7px;
+}
+#profilename{
+  margin-right: 15px;
+  margin-top: 20px;
+  color: #f1f1f1;
 }
