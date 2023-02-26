@@ -36,6 +36,14 @@ body {
   font-size: 26px;
   margin-left: 50px;
 }
+.opensymbol{
+  position: absolute;
+  top: 10;
+  right: 25px;
+  font-size: 26px;
+  margin-left: 50px;
+  color: #f1f1f1;
+}
 
 #main {
   transition: margin-left .5s;
@@ -95,4 +103,39 @@ body {
   margin-top:25px;
    background-color: #f9ae7d;
    color: white;
+}
+#staffH{
+  background-color: #f9ae7d; 
+  padding:10px
+}
+#divStaff{
+  padding:0px; 
+  border:1px solid wheat
+}
+#spanH{
+  font-size: 25px;
+}
+#staffSubmitbtn{
+  background-color: #f9ae7d;color: white;
+}
+#reportH{
+  font-size: 25px;
+}
+#apperror-sDate{
+  margin-top: -10px;
+   margin-left: 20px;
+    color: red; 
+    position: absolute;
+}
+#apperror-eDate{
+  margin-top:-10px;
+   margin-left:20px;
+    color:red;
+    position:absolute;
+}
+#btnreport{
+  margin-top:23px;
+}
+.loadingid{
+  margin-top:20px;
 }
