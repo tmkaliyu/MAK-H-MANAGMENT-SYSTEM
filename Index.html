@@ -17,14 +17,14 @@
 <meta-viewport name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 <!--JQUERY-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
 
 <!--FONT AWESOME-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--FILES-->
 <link rel="stylesheet" href="managment.css">
 <link rel="stylesheet" href="fontawesome/css/all.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
 <script  src="managment.js"></script>
 <!--Bootstrap-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -38,7 +38,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#" id="dashA" onclick="navDashboard()"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-  <a href="#" id="actA" onclick="pManager()"><i class="fas fa-chart-line"></i> Product Maintenance</a>
+  <a href="#" class="hidden" id="actA" onclick="pManager()"><i class="fas fa-chart-line"></i> Product Maintenance</a>
   <a href="#" id="carregA" onclick="bManager()"><i class="fas fa-database"></i> Bike Maintenance</a>
   <a href="#" id="updateA" onclick="oderEntry()"><i class="fab fa-stack-exchange"></i> Order Entry</a>
   <a href="#" id="payA" onclick="sData()"><i class="far fa-credit-card"></i> Staff Data</a>
@@ -98,88 +98,167 @@
     </table>
  </div>
  <div id="orderEntryDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
-    <span class="headText">Order Entery  </span>
+    <span class="headText"> <b>Order</b>  </span> <button type="button" id="backToOder" onclick="backToOder()" id="button-1" class="btn  btn-md waves-effect pull-right hidden" >Back To Oders</button> <button type="button" id="viewPending" onclick="viewPending()" id="button-1" class="btn  btn-md waves-effect pull-right" >View Pending Payment</button>
     <hr>
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " id="Odiv">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span class="headText"><b>Entery Order</b>  </span><br>
+        <hr>
+    </div>
     <div id="divridersList" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
-            <div class="form-line">
-                <label for="ridersList">Riders List </label>
-                <select  id="ridersList" class="form-control">
-                    <option>--select--</option>
-                    <option>Muhammad</option>
-                    <option>an Hajiya</option>
-                    <option>Kabir</option>
-                </select> 
-            </div>
-    </div>
-    <div id="divObikeNumber" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-        <div class="form-group form-float">
-            <div class="form-line">
-                <label for="ObikeNumber">Riders List </label>
-                <select  id="ObikeNumber" class="form-control">
-                    <option>--select--</option>
-                    <option>BVC45ER</option>
-                    <option>BVE54CV</option>
-                    <option>BVC21XZ</option>
-                </select> 
-            </div>
+        <div class="form-line">
+            <label for="ridersList">Riders Name </label>
+            <select  id="ridersList" class="form-control">
+                <option>--select--</option>
+                <option>Muhammad</option>
+                <option>an Hajiya</option>
+                <option>Kabir</option>
+            </select> 
         </div>
-    </div>
-    <div id="divnumberOrder" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-        <div class="form-group form-float">
-            <div class="form-line">
-                <label for="numberOrder">Number of orders </label>
-                 <input type="number" id="numberOrder" class="form-control" placeholder="Number of orders" />
-            </div>
-        </div>
-    </div>
-    <div id="divdeliveryCharges" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-        <div class="form-group form-float">
-            <div class="form-line">
-                <label for="deliveryCharges">Delivery Charges </label>
-                 <input type="number" id="deliveryCharges" class="form-control" value="500" disabled />
-            </div>
-        </div>
-    </div>
-    <div id="divtotalAmount" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-        <div class="form-group form-float">
-            <div class="form-line">
-                <label for="totalAmount">Total Amount</label>
-                 <input type="number" id="totalAmount" class="form-control" disabled />
-            </div>
-        </div>
-    </div>
-    <div id="divriderCommission" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
-        <div class="form-group form-float">
-            <div class="form-line">
-                <label for="riderCommission">Rider Commission </label>
-                 <input type="number" id="riderCommission" class="form-control" disabled />
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-2 ">
-        <div class="form-group">
-            <button type="button" id="submitOrder" onclick="submitRecord()" id="button-1" class="btn  btn-md waves-effect " >Submit</button>
-        </div>
-    </div>
- </div> 
- <div id="dashboardDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
-
- </div>
- <div id="bikeMainDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
-    <span class="font-size: 25px;">Bike Maintainance </span>
-    <hr>
-    
-<div id="divbikeNumber" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+</div>
+<div id="divObikeNumber" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
     <div class="form-group form-float">
         <div class="form-line">
-            <label for="bikeNumber">Riders List </label>
-            <select  id="bikeNumber" class="form-control">
+            <label for="ObikeNumber">Bike Number </label>
+            <select  id="ObikeNumber" class="form-control">
                 <option>--select--</option>
                 <option>BVC45ER</option>
                 <option>BVE54CV</option>
                 <option>BVC21XZ</option>
             </select> 
         </div>
+    </div>
+</div>
+<div id="divpaymentStatus" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+    <div class="form-group form-float">
+        <div class="form-line">
+            <label for="paymentStatus">Payment Status </label>
+            <select  id="paymentStatus" class="form-control">
+                <option>--select--</option>
+                <option>Paid</option>
+                <option>Pending</option>
+            </select> 
+        </div>
+    </div>
+</div>
+<div id="divorderId" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+    <div class="form-group form-float">
+        <div class="form-line">
+            <label for="orderId">Order ID</label>
+             <input type="number" id="orderId" class="form-control" value="DL003" disabled/>
+        </div>
+    </div>
+</div>
+<div id="divdeliveryCharges" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+    <div class="form-group form-float">
+        <div class="form-line">
+            <label for="deliveryCharges">Delivery Charges </label>
+             <input type="number" id="deliveryCharges" class="form-control" value="500" disabled />
+        </div>
+    </div>
+</div>
+<div id="divriderCommission" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
+    <div class="form-group form-float">
+        <div class="form-line">
+            <label for="riderCommission">Rider Commission </label>
+             <input type="number" id="riderCommission" class="form-control" value="100" disabled />
+        </div>
+    </div>
+</div>
+<div id="divsourceLocation" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+    <div class="form-group form-float">
+        <div class="form-line">
+            <label for="sourceLocation">Pickup Location</label>
+            <select  id="sourceLocation" class="form-control">
+                <option>--select--</option>
+                <option>Gwale</option>
+                <option>Dalala</option>
+            </select> 
+        </div>
+    </div>
+</div>
+<div id="divdestinationLocation" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+    <div class="form-group form-float">
+        <div class="form-line">
+            <label for="destinationLocation">Delivery Location </label>
+            <select  id="destinationLocation" class="form-control">
+                <option>--select--</option>
+                <option>Gwale</option>
+                <option>Dalala</option>
+            </select> 
+        </div>
+    </div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+    <div class="form-group">
+        <button type="button" id="submitOrder" onclick="submitRecord()" id="button-1" class="btn  btn-md waves-effect pull-right" >Submit</button>
+    </div>
+</div>
+   </div>
+   
+   
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden" id="Vdiv">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span class="headText"><b>Pending Payment</b> </span><br>
+        <hr>
+    </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Order ID</th>
+                <th>Rider</th>
+                <th>Bike Number</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th><center>Action</center></th>
+            </tr>
+            <tr>
+                <td>DL003</td>
+                <td>Muhammad</td>
+                <td>VBG56FG</td>
+                <td>500</td>
+                <td>Pending</td>
+                <td>02-JAN-2023</td>
+                <td> <center><button type="button" id="updatePayment" onclick="updatePayment()" id="button-1" class="btn  btn-md btn-success waves-effect" >Update Payment</button></center></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+
+ </div> 
+ <div id="dashboardDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
+    <div id="dbcm" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span id="CM">COMING SOON</span>
+        <hr class="linr">
+    </div>
+ </div>
+ <div id="bikeMainDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
+    <span class="headText"><b>Bike Maintenance</b> </span>
+    <hr>
+    
+<div id="divbikeNumberM" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+    <div class="form-group form-float">
+        <div class="form-line">
+            <label for="bikeNumberM">Bike List </label>
+            <select  id="bikeNumberM" class="form-control">
+                <option>--select--</option>
+                <option>BVC45ER</option>
+                <option>BVE54CV</option>
+                <option>BVC21XZ</option>
+            </select> 
+        </div>
+    </div>
+</div>
+<div id="divridersListM" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
+    <div class="form-line">
+        <label for="ridersListM">Riders Name </label>
+        <select  id="ridersListM" class="form-control">
+            <option>--select--</option>
+            <option>Muhammad</option>
+            <option>an Hajiya</option>
+            <option>Kabir</option>
+        </select> 
     </div>
 </div>
 <div id="divbikeCondition" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
@@ -197,14 +276,6 @@
         <div class="form-line">
             <label for="bsMeterNumber">Bike Start Meter Number </label>
              <input type="number" id="bsMeterNumber" class="form-control" placeholder="Bike Start Meter Number" />
-        </div>
-    </div>
-</div>
-<div id="divbeMeterNumber" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-    <div class="form-group form-float">
-        <div class="form-line">
-            <label for="beMeterNumber">Bike End Meter Number </label>
-             <input type="number" id="beMeterNumber" class="form-control" placeholder="Bike End Meter Number"  />
         </div>
     </div>
 </div>
@@ -241,9 +312,9 @@
         </div>
     </div>
 </div>
-<div class="col-sm-2 ">
+<div class="col-sm-12 ">
     <div class="form-group">
-        <button type="button" id="submitMaintainance" onclick="submitMaintanance()" id="button-1" class="btn  btn-md waves-effect " >Submit</button>
+        <button type="button" id="submitMaintainance" onclick="submitMaintanance()"  class="btn  btn-md waves-effect pull-right" >Submit</button>
     </div>
 </div>
 
@@ -265,8 +336,9 @@
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <label>Last Name</label>
             <input type="text" placeholder="Last Name" class="form-control" />
-            <br>
+            
         </div>
+<br>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <label>Staff ID</label>
             <input type="text" placeholder="Staff ID" class="form-control" />
@@ -285,7 +357,8 @@
             <input type="text" placeholder="Address" class="form-control" />
             
         </div>
-        
+
+        <br>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <label>E-Mail</label>
             <input type="email" placeholder="E-Mail" class="form-control" />
@@ -294,34 +367,41 @@
             <label>Phone Number</label>
             <input type="number" placeholder="Phone Number" class="form-control" />
         </div>
-        
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Alternative Number</label>
+            <input type="text" placeholder="Alternative Number" class="form-control" />
+        </div>
+
+        <br>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <label>Garantor Name</label>
-            <input type="text" placeholder="Garantor Name" class="form-control" /><br>
+            <input type="text" placeholder="Garantor Name" class="form-control" />
         </div>
-        
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <label>Garanto Address</label>
             <input type="text" placeholder="Garantor Address" class="form-control" />
         </div>
-        
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <label>Garanto Phone</label>
             <input type="text" placeholder="Garantor Address" class="form-control" />
         </div>
+<br>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <label>Next Of Kin Name</label>
-            <input type="text" placeholder="Garantor Name" class="form-control" /><br>
+            <input type="text" placeholder="Garantor Name" class="form-control" />
         </div>
-        
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <label>Next Of Kin Address</label>
             <input type="text" placeholder="Garantor Address" class="form-control" />
-        </div>
-        
+        </div>  
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <label>Next Of Kin Phone</label>
             <input type="text" placeholder="Garantor Address" class="form-control" />
+        </div>
+          <br>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <label>Date Of Joining</label>
+            <input type="text" placeholder="Date Of Joining" class="form-control" />
         </div>
         <div class="btnclass col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <br>

@@ -151,3 +151,34 @@ body {
   margin-top: 20px;
   color: #f1f1f1;
 }
+#submitMaintainance{
+  margin-top:25px;
+   background-color: #f9ae7d;
+   color: white;
+}
+#sps{
+  height: 20px;
+}
+
+#Odiv{
+  padding: 0px;
+}
+#Vdiv{
+  padding: 0px;
+}
+.headText{
+  font-size: medium;
+}
+#CM{
+  font-size: 70px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#dbcm{
+  padding-top: 250px;
+  padding-left: 450px;
+}
+.linr{
+  width: 70px;
+  height: 10px;
+  color: #f9ae7d;
+}
