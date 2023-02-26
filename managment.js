@@ -11,12 +11,9 @@ function closeNav() {
 
 
 $(document).ready( function () {
-  $('#activitiesTable').DataTable();
+    navDashboard();
 } );
 
-$(document).ready( function () {
-  $('#reportTable').DataTable();
-} );
 
 
 
@@ -92,6 +89,7 @@ function pManager(){
         userA.style.color = 'black';
         
     }
+    closeNav();
 }
 
 // Dashboard nav menu funtion
@@ -113,6 +111,7 @@ function navDashboard(){
         userA.style.color = 'black';
         
     }
+    closeNav();
 }
 
 // Update Location nav menu funtion
@@ -134,6 +133,7 @@ function oderEntry(){
         userA.style.color = 'black';
         
     }
+    closeNav();
 }
 
 // car registration nav menu funtion
@@ -155,6 +155,7 @@ function bManager(){
         userA.style.color = 'black';
         
     }
+    closeNav();
 }
 
 // Payment nav menu funtion
@@ -176,6 +177,7 @@ function sData(){
         userA.style.color = 'black';
         
     }
+    closeNav();
 }
 
 // Report nav menu funtion
@@ -197,6 +199,7 @@ function navReport(){
         userA.style.color = 'black';
         
     }
+    closeNav();
 }
 
 // Users nav menu funtion
@@ -218,4 +221,26 @@ function navUsers(){
         userA.style.color = 'white';
         
     }
+    closeNav();
+}
+
+function viewPending(){
+    
+    $("#Odiv").addClass("hidden");
+    $("#Vdiv").removeClass("hidden");
+    
+    $("#backToOder").removeClass("hidden");
+    $("#viewPending").addClass("hidden");
+    
+    
+}
+
+function backToOder(){
+    
+    $("#Odiv").removeClass("hidden");
+    $("#Vdiv").addClass("hidden");
+    
+    $("#backToOder").addClass("hidden");
+    $("#viewPending").removeClass("hidden");
+
 }
