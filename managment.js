@@ -284,6 +284,5 @@ function backToOder(){
 }
 
 function rejectReq(){
-    alert("try");
     $("#rejectDivRe").removeClass("hidden");
     }
