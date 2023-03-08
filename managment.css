@@ -56,7 +56,6 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
-    height: 50%;
   }
   .sidenav a {font-size: 18px;}
 }
@@ -156,6 +155,10 @@ body {
    background-color: #f9ae7d;
    color: white;
 }
+#submitRequest{
+  background-color: #f9ae7d;
+  color: white;
+}
 #sps{
   height: 20px;
 }
@@ -181,4 +184,7 @@ body {
   width: 70px;
   height: 10px;
   color: #f9ae7d;
+}
+.mHeader{
+  font-size: 25px;
 }

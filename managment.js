@@ -79,6 +79,7 @@ function pManager(){
     $("#staffDiv").addClass("hidden");
     $("#reportDiv").addClass("hidden");
     $("#usersDiv").addClass("hidden");
+    $("#appReqDiv").addClass("hidden");
     if(!$("proMainDiv").is(":hidden")){
         actA.style.color = 'white';
         dashA.style.color = 'black';
@@ -87,6 +88,7 @@ function pManager(){
         payA.style.color = 'black';
         repA.style.color = 'black';
         userA.style.color = 'black';
+        appR.style.color = 'black';
         
     }
     closeNav();
@@ -101,6 +103,7 @@ function navDashboard(){
     $("#staffDiv").addClass("hidden");
     $("#reportDiv").addClass("hidden");
     $("#usersDiv").addClass("hidden");
+    $("#appReqDiv").addClass("hidden");
     if(!$("dashboardDiv").is(":hidden")){
         actA.style.color = 'black';
         dashA.style.color = 'white';
@@ -109,6 +112,7 @@ function navDashboard(){
         payA.style.color = 'black';
         repA.style.color = 'black';
         userA.style.color = 'black';
+        appR.style.color = 'black';
         
     }
     closeNav();
@@ -123,6 +127,7 @@ function oderEntry(){
     $("#staffDiv").addClass("hidden");
     $("#reportDiv").addClass("hidden");
     $("#usersDiv").addClass("hidden");
+    $("#appReqDiv").addClass("hidden");
     if(!$("orderEntryDiv").is(":hidden")){
         actA.style.color = 'black';
         dashA.style.color = 'black';
@@ -131,6 +136,7 @@ function oderEntry(){
         payA.style.color = 'black';
         repA.style.color = 'black';
         userA.style.color = 'black';
+        appR.style.color = 'black';
         
     }
     closeNav();
@@ -145,6 +151,7 @@ function bManager(){
     $("#staffDiv").addClass("hidden");
     $("#reportDiv").addClass("hidden");
     $("#usersDiv").addClass("hidden");
+    $("#appReqDiv").addClass("hidden");
     if(!$("bikeMainDiv").is(":hidden")){
         actA.style.color = 'black';
         dashA.style.color = 'black';
@@ -153,6 +160,7 @@ function bManager(){
         payA.style.color = 'black';
         repA.style.color = 'black';
         userA.style.color = 'black';
+        appR.style.color = 'black';
         
     }
     closeNav();
@@ -167,6 +175,7 @@ function sData(){
     $("#staffDiv").removeClass("hidden");
     $("#reportDiv").addClass("hidden");
     $("#usersDiv").addClass("hidden");
+    $("#appReqDiv").addClass("hidden");
     if(!$("staffDiv").is(":hidden")){
         actA.style.color = 'black';
         dashA.style.color = 'black';
@@ -175,6 +184,7 @@ function sData(){
         payA.style.color = 'white';
         repA.style.color = 'black';
         userA.style.color = 'black';
+        appR.style.color = 'black';
         
     }
     closeNav();
@@ -189,6 +199,7 @@ function navReport(){
     $("#staffDiv").addClass("hidden");
     $("#reportDiv").removeClass("hidden");
     $("#usersDiv").addClass("hidden");
+    $("#appReqDiv").addClass("hidden");
     if(!$("reportDiv").is(":hidden")){
         actA.style.color = 'black';
         dashA.style.color = 'black';
@@ -197,6 +208,7 @@ function navReport(){
         payA.style.color = 'black';
         repA.style.color = 'white';
         userA.style.color = 'black';
+        appR.style.color = 'black';
         
     }
     closeNav();
@@ -211,6 +223,7 @@ function navUsers(){
     $("#staffDiv").addClass("hidden");
     $("#reportDiv").addClass("hidden");
     $("#usersDiv").removeClass("hidden");
+    $("#appReqDiv").addClass("hidden");
     if(!$("usersDiv").is(":hidden")){
         actA.style.color = 'black';
         dashA.style.color = 'black';
@@ -219,10 +232,35 @@ function navUsers(){
         payA.style.color = 'black';
         repA.style.color = 'black';
         userA.style.color = 'white';
+        appR.style.color = 'black';
         
     }
     closeNav();
 }
+
+function aRequest(){
+    $("#proMainDiv").addClass("hidden");
+    $("#dashboardDiv").addClass("hidden");
+    $("#orderEntryDiv").addClass("hidden");
+    $("#bikeMainDiv").addClass("hidden");
+    $("#staffDiv").addClass("hidden");
+    $("#reportDiv").addClass("hidden");
+    $("#usersDiv").addClass("hidden");
+    $("#appReqDiv").removeClass("hidden");
+    if(!$("appReqDiv").is(":hidden")){
+        actA.style.color = 'black';
+        dashA.style.color = 'black';
+        updateA.style.color = 'black';
+        carregA.style.color = 'black';
+        payA.style.color = 'black';
+        repA.style.color = 'black';
+        userA.style.color = 'black';
+        appR.style.color = 'white';
+        
+    }
+    closeNav();
+}
+
 
 function viewPending(){
     
@@ -244,3 +282,8 @@ function backToOder(){
     $("#viewPending").removeClass("hidden");
 
 }
+
+function rejectReq(){
+    alert("try");
+    $("#rejectDivRe").removeClass("hidden");
+    }
