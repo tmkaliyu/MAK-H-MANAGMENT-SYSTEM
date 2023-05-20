@@ -2,7 +2,6 @@ body {
   font-family: 'Times New Roman';
   transition: background-color .5s;
 }
-
 .sidenav {
   height: 100%;
   width: 0;
