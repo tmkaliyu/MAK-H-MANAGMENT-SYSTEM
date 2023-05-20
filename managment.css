@@ -241,4 +241,85 @@ body {
 }
 
 /* Request Payment*/
+#proMainDiv{
+  font-family: 'Times New Roman', Times, serif;
+}
+.proMainDivHead{
+  border-bottom:1px solid #fc640c;
+  padding: 10px;
+  background-color: #fc640c;
+  color: #f1f1f1;
+}
+.proMainDivContaina{
+  padding: 15px;
+  background-color: #f0eeed;
+}
+#submitRequest{
+  margin-top:25px;
+  background-color: #fc640c;
+  color: white;
+}
+/* Approve Request */
+#appReqDiv{
+  font-family: 'Times New Roman', Times, serif;
+}
+.appReqDivHead{
+  border-bottom:1px solid #fc640c;
+  padding: 10px;
+  background-color: #fc640c;
+  color: #f1f1f1;
+}
+.appReqDivContainer{
+  padding: 15px;
+  background-color: #f0eeed;
+}
 
+/* staff Div */
+#staffDiv{
+  font-family: 'Times New Roman', Times, serif;
+}
+.staffDivHead{
+  border-bottom:1px solid #fc640c;
+  padding: 10px;
+  background-color: #fc640c;
+  color: #f1f1f1;
+}
+.staffDivContainer{
+  padding: 15px;
+  background-color: #f0eeed;
+}
+#staffSubmitbtn{
+  margin-top:25px;
+  background-color: #fc640c;
+  color: white;
+}
+
+/* report */
+#reportDiv{
+  font-family: 'Times New Roman', Times, serif;
+}
+.reportDivHead{
+  border-bottom:1px solid #fc640c;
+  padding: 10px;
+  background-color: #fc640c;
+  color: #f1f1f1;
+}
+.reportDivContainer{
+  padding: 15px;
+  background-color: #f0eeed;
+  }
+
+  /* user Div*/
+  #usersDiv{
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .usersDivHead{
+    border-bottom:1px solid #fc640c;
+    padding: 10px;
+    background-color: #fc640c;
+    color: #f1f1f1;
+  }
+  .usersDivContainer{
+    padding: 15px;
+    background-color: #f0eeed;
+    }

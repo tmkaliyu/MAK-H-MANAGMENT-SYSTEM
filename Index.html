@@ -59,11 +59,10 @@
     </div>
     <div id="contentDiv" class="clearfix">
         <div id="appReqDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-4 hidden">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <span class="headText"><b>Approve Request</b></span><br>
-            <hr>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 appReqDivHead">
+                <span class="headText"><b>Approve Request</b></span>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 appReqDivContainer">
             <table class="table table-bordered table-striped table-responsive">
                 <tr>
                     <th>Staff ID</th>
@@ -108,20 +107,16 @@
             </div>
 
         </div>
-        <div id="proMainDiv" class="col-lg-12 col-md-6 col-sm-4 col-xs-4 hidden">
+        <div id="proMainDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
+           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 proMainDivHead">
             <span class="headText">Request Payment</span>
-            <hr>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-               
-             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
+           </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 proMainDivContaina">
                 <div id="divorderId" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                    <div class="form-group form-float">
                         <div class="form-line">
                             <label for="requestId">Request ID</label>
                             <input type="number" id="requestId" class="inputstyle" value="RQ003" disabled />
                         </div>
-                    </div>
                 </div>
                 <div id="divRequestIDList" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
                     <div class="form-line">
@@ -135,12 +130,12 @@
                     </div>
                 </div>
                 <div id="divRemarkRequest" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                    <div class="form-group form-float">
+                    
                         <div class="form-line">
                             <label for="requestRemId">Request ID</label>
                             <input type="number" id="requestRemId" class="inputstyle" />
                         </div>
-                    </div>
+                    
                 </div>
                 <div id="divStaffList" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
                     <div class="form-line">
@@ -153,19 +148,14 @@
                         </select>
                     </div>
                 </div>
-             </div>
-
-
-             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div id="divReqAmout" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                    <div class="form-group ">
+                    
                         <div class="form-line">
                             <label for="ReqAmout">Amount</label>
                             <input type="number" id="ReqAmout" class="inputstyle" />
                         </div>
-                    </div>
-                </div>
-                
+
+                </div>           
                 <div id="divPaymentPrio" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
                     <div class="form-line">
                         <label for="payPraioList">Praiority</label>
@@ -177,15 +167,13 @@
                         </select>
                     </div>
                 </div>
-             </div>
                 <div class="col-sm-12 ">
                     <div class="form-group">
                         <button type="button" id="submitRequest" onclick="submitRequest()"
                             class="btn  btn-md waves-effect pull-right">Submit</button>
                     </div>
                 </div>
-
-            </div>
+             </div>
 
         </div>
         <div id="orderEntryDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
@@ -434,10 +422,12 @@
 
         </div>
         <div id="staffDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
-            <span id="spanH">Staff Data Entery</span>
-            <hr>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <br>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 staffDivHead">
+                <span id="spanH">Staff Data Entery</span>
+            </div>
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 staffDivContainer">
+                
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>First Name</label>
                     <input type="text" placeholder="First Name" class="inputstyle" />
@@ -523,161 +513,166 @@
             </div>
         </div>
         <div id="reportDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
-
-            <span id="reportH">Report</span>
-            <hr>
-            <div id="divreportTypeID" class="col-sm-3 ">
-                <div class="form-group form-float">
-                    <div class="form-line">
-                        <label for="reportTypeID">Report Type</label>
-                        <select id="reportTypeID" class="inputstyle">
-                            <option value="">-- Report Type --</option>
-                            <option value="1">Payment</option>
-                            <option value="2">Staff</option>
-                            <option value="3">Order</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportDivHead">
+                <span id="reportH">Report</span>
             </div>
-            <div class="searchDiv hidden">
-                <div id="divreportrider" class="col-sm-3 ">
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportDivContainer">
+                <div id="divreportTypeID" class="col-sm-3 ">
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <label for="reportrider">Select Rider</label>
-                            <select id="reportrider" class="inputstyle">
+                            <label for="reportTypeID">Report Type</label>
+                            <select id="reportTypeID" class="inputstyle">
                                 <option value="">-- Report Type --</option>
-                                <option value="1">Muhamad</option>
-                                <option value="2">Umar</option>
-                                <option value="3">Musa</option>
+                                <option value="1">Payment</option>
+                                <option value="2">Staff</option>
+                                <option value="3">Order</option>
                             </select>
                         </div>
                     </div>
                 </div>
-
-                <div id="divdate" class="col-sm-3 ">
-                    <div class="form-group form-float">
-                        <div class="form-line">
-                            <label for="startDate">From</label>
-                            <input class="inputstyle" id="startDate" type="date">
-
-                        </div>
-                    </div>
-                    <span id="apperror-sDate" class="hidden">From Date is required </span>
-
-                </div>
-                <div id="divdate" class="col-sm-3 ">
-                    <div class="form-group form-float">
-                        <div class="form-line">
-                            <label for="endDate">To</label>
-                            <input class="inputstyle" id="endDate" type="date">
-
-                        </div>
-                    </div>
-                    <span id="apperror-eDate" class="hidden">To Date is required </span>
-
-                </div>
-
-                <div class="col-sm-2 ">
-                    <div class="form-group">
-                        <button type="button" id="btnreport" onclick="retriveReport()" id="button-1"
-                            class="btn btn-success btn-md waves-effect ">Search</button>
-                    </div>
-                </div>
-            </div>
-            <div class="loadingid hidden">
-                <div class="loader">
-                    <div class="preloader  pl-size-sm">
-                        <div class="spinner-layer pl-green">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="circle-clipper right">
-                                <div class="circle"></div>
+                <div class="searchDiv hidden">
+                    <div id="divreportrider" class="col-sm-3 ">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label for="reportrider">Select Rider</label>
+                                <select id="reportrider" class="inputstyle">
+                                    <option value="">-- Report Type --</option>
+                                    <option value="1">Muhamad</option>
+                                    <option value="2">Umar</option>
+                                    <option value="3">Musa</option>
+                                </select>
                             </div>
                         </div>
                     </div>
+    
+                    <div id="divdate" class="col-sm-3 ">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label for="startDate">From</label>
+                                <input class="inputstyle" id="startDate" type="date">
+    
+                            </div>
+                        </div>
+                        <span id="apperror-sDate" class="hidden">From Date is required </span>
+    
+                    </div>
+                    <div id="divdate" class="col-sm-3 ">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label for="endDate">To</label>
+                                <input class="inputstyle" id="endDate" type="date">
+    
+                            </div>
+                        </div>
+                        <span id="apperror-eDate" class="hidden">To Date is required </span>
+    
+                    </div>
+    
+                    <div class="col-sm-2 ">
+                        <div class="form-group">
+                            <button type="button" id="btnreport" onclick="retriveReport()" id="button-1"
+                                class="btn btn-success btn-md waves-effect ">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="loadingid hidden">
+                    <div class="loader">
+                        <div class="preloader  pl-size-sm">
+                            <div class="spinner-layer pl-green">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="divReportResult" class="hidden">
+                    <table id="reportTablecar" class="table table-responsive table-strip table-borderd">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Car Name</th>
+                                <th>Car Model</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr>
+                                <td>1</td>
+                                <td>Benz</td>
+                                <td>GLK500</td>
+                                <td>12,000,000</td>
+                                <td>19/12/2021</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Benz</td>
+                                <td>GLK500</td>
+                                <td>12,000,000</td>
+                                <td>19/12/2021</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Benz</td>
+                                <td>GLK500</td>
+                                <td>12,000,000</td>
+                                <td>19/12/2021</td>
+                            </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+                <div id="payReport" class="hidden">
+                    <table id="reportTablepay" class="table table-responsive table-strip table-borderd">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Full Name</th>
+                                <th>Car Model</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr>
+                                <td>1</td>
+                                <td>Jamal Malik</td>
+                                <td>GLK500</td>
+                                <td>12,000,000</td>
+                                <td>19/12/2021</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ben Zama Madrid</td>
+                                <td>GLK500</td>
+                                <td>12,000,000</td>
+                                <td>19/12/2021</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Crous Toni</td>
+                                <td>GLK500</td>
+                                <td>12,000,000</td>
+                                <td>19/12/2021</td>
+                            </tr>
+    
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div id="divReportResult" class="hidden">
-                <table id="reportTablecar" class="table table-responsive table-strip table-borderd">
-                    <thead>
-                        <tr>
-                            <th>S/N</th>
-                            <th>Car Name</th>
-                            <th>Car Model</th>
-                            <th>Amount</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td>1</td>
-                            <td>Benz</td>
-                            <td>GLK500</td>
-                            <td>12,000,000</td>
-                            <td>19/12/2021</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Benz</td>
-                            <td>GLK500</td>
-                            <td>12,000,000</td>
-                            <td>19/12/2021</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Benz</td>
-                            <td>GLK500</td>
-                            <td>12,000,000</td>
-                            <td>19/12/2021</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div id="payReport" class="hidden">
-                <table id="reportTablepay" class="table table-responsive table-strip table-borderd">
-                    <thead>
-                        <tr>
-                            <th>S/N</th>
-                            <th>Full Name</th>
-                            <th>Car Model</th>
-                            <th>Amount</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td>1</td>
-                            <td>Jamal Malik</td>
-                            <td>GLK500</td>
-                            <td>12,000,000</td>
-                            <td>19/12/2021</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Ben Zama Madrid</td>
-                            <td>GLK500</td>
-                            <td>12,000,000</td>
-                            <td>19/12/2021</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Crous Toni</td>
-                            <td>GLK500</td>
-                            <td>12,000,000</td>
-                            <td>19/12/2021</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
+       
         </div>
         <div id="usersDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12  hidden">
-            <span class="mHeader">Manage Users</span>
-            <hr>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  usersDivHead">
+                <span class="mHeader">Manage Users</span>
+            </div>
 
             <div class="loadingid hidden">
                 <div class="loader">
@@ -693,142 +688,143 @@
                     </div>
                 </div>
             </div>
-            <div id="usersReport" class="">
-                <table id="reportTablecar" class="table table-responsive table-strip table-borderd">
-                    <thead>
-                        <tr>
-                            <th>S/N</th>
-                            <th>Staff ID</th>
-                            <th>Full Name</th>
-                            <th>Role</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td>1</td>
-                            <td>ZIMAN001</td>
-                            <td>Mustapha Isha </td>
-                            <td>Registration</td>
-                            <td class="dropdown">
-                                <center>
-                                    <a title="action" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-bars"></i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="#" class="waves-effect waves-block edit-user"
-                                                data-user-id="@user.Id" data-toggle="modal"
-                                                data-target="#UserEditModal"><i class="fas fa-edit"></i>Edit</a></li>
-                                        <li><a href="#" class="waves-effect waves-block delete-user"
-                                                data-user-id="@user.Id" data-user-name="@user.UserName"><i
-                                                    class="fas fa-trash-alt"></i>Delete</a></li>
-                                        <li><a href="#" class="waves-effect waves-block reset-password"
-                                                data-user-id="@user.Id" data-user-name="@user.UserName"
-                                                data-toggle="modal" data-target="#PasswordChangeModal"><i
-                                                    class="fas fa-key"></i>Change Password</a></li>
-                                    </ul>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>ZIMAN001</td>
-                            <td>Mustapha Isha </td>
-                            <td>Registration</td>
-                            <td><input aria-label="inpcheck" type="checkbox" checked /></td>
-                            <td class="dropdown">
-                                <center>
-                                    <a title="action" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-bars"></i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="#" class="waves-effect waves-block edit-user"
-                                                data-user-id="@user.Id" data-toggle="modal"
-                                                data-target="#UserEditModal"><i class="fas fa-edit"></i> Edit</a></li>
-                                        <li><a href="#" class="waves-effect waves-block delete-user"
-                                                data-user-id="@user.Id" data-user-name="@user.UserName"><i
-                                                    class="fas fa-trash-alt"></i> Delete</a></li>
-                                        <li><a href="#" class="waves-effect waves-block reset-password"
-                                                data-user-id="@user.Id" data-user-name="@user.UserName"
-                                                data-toggle="modal" data-target="#PasswordChangeModal"><i
-                                                    class="fas fa-key"></i> Reset Password</a></li>
-                                    </ul>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>ZIMAN001</td>
-                            <td>Mustapha Isha </td>
-                            <td>Registration</td>
-                            <td><input aria-label="inpche" type="checkbox" checked /></td>
-                            <td class="dropdown">
-                                <center>
-                                    <a title="action" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-bars"></i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="#" class="waves-effect waves-block edit-user"
-                                                data-user-id="@user.Id" data-toggle="modal"
-                                                data-target="#UserEditModal"><i class="fas fa-edit"></i>Edit</a></li>
-                                        <li><a href="#" class="waves-effect waves-block delete-user"
-                                                data-user-id="@user.Id" data-user-name="@user.UserName"><i
-                                                    class="fas fa-trash-alt"></i>Delete</a></li>
-                                        <li><a href="#" class="waves-effect waves-block reset-password"
-                                                data-user-id="@user.Id" data-user-name="@user.UserName"
-                                                data-toggle="modal" data-target="#PasswordChangeModal"><i
-                                                    class="fas fa-key"></i>Change Password</a></li>
-                                    </ul>
-                                </center>
-                            </td>
-                        </tr>
-
-
-                    </tbody>
-                </table>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 usersDivContainer">
+                <div id="usersReport" class="">
+                    <table id="reportTablecar" class="table table-responsive table-strip table-borderd">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Staff ID</th>
+                                <th>Full Name</th>
+                                <th>Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr>
+                                <td>1</td>
+                                <td>ZIMAN001</td>
+                                <td>Mustapha Isha </td>
+                                <td>Registration</td>
+                                <td class="dropdown">
+                                    <center>
+                                        <a title="action" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-bars"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" class="waves-effect waves-block edit-user"
+                                                    data-user-id="@user.Id" data-toggle="modal"
+                                                    data-target="#UserEditModal"><i class="fas fa-edit"></i>Edit</a></li>
+                                            <li><a href="#" class="waves-effect waves-block delete-user"
+                                                    data-user-id="@user.Id" data-user-name="@user.UserName"><i
+                                                        class="fas fa-trash-alt"></i>Delete</a></li>
+                                            <li><a href="#" class="waves-effect waves-block reset-password"
+                                                    data-user-id="@user.Id" data-user-name="@user.UserName"
+                                                    data-toggle="modal" data-target="#PasswordChangeModal"><i
+                                                        class="fas fa-key"></i>Change Password</a></li>
+                                        </ul>
+                                    </center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>ZIMAN001</td>
+                                <td>Mustapha Isha </td>
+                                <td>Registration</td>
+                                <td class="dropdown">
+                                    <center>
+                                        <a title="action" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-bars"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" class="waves-effect waves-block edit-user"
+                                                    data-user-id="@user.Id" data-toggle="modal"
+                                                    data-target="#UserEditModal"><i class="fas fa-edit"></i> Edit</a></li>
+                                            <li><a href="#" class="waves-effect waves-block delete-user"
+                                                    data-user-id="@user.Id" data-user-name="@user.UserName"><i
+                                                        class="fas fa-trash-alt"></i> Delete</a></li>
+                                            <li><a href="#" class="waves-effect waves-block reset-password"
+                                                    data-user-id="@user.Id" data-user-name="@user.UserName"
+                                                    data-toggle="modal" data-target="#PasswordChangeModal"><i
+                                                        class="fas fa-key"></i> Reset Password</a></li>
+                                        </ul>
+                                    </center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>ZIMAN001</td>
+                                <td>Mustapha Isha </td>
+                                <td>Registration</td>
+                                <td class="dropdown">
+                                    <center>
+                                        <a title="action" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-bars"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="#" class="waves-effect waves-block edit-user"
+                                                    data-user-id="@user.Id" data-toggle="modal"
+                                                    data-target="#UserEditModal"><i class="fas fa-edit"></i>Edit</a></li>
+                                            <li><a href="#" class="waves-effect waves-block delete-user"
+                                                    data-user-id="@user.Id" data-user-name="@user.UserName"><i
+                                                        class="fas fa-trash-alt"></i>Delete</a></li>
+                                            <li><a href="#" class="waves-effect waves-block reset-password"
+                                                    data-user-id="@user.Id" data-user-name="@user.UserName"
+                                                    data-toggle="modal" data-target="#PasswordChangeModal"><i
+                                                        class="fas fa-key"></i>Change Password</a></li>
+                                        </ul>
+                                    </center>
+                                </td>
+                            </tr>
+    
+    
+                        </tbody>
+                    </table>
+                </div>
+                <div id="payReport" class="hidden">
+                    <table id="reportTablepay" class="table table-responsive table-strip table-borderd">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Full Name</th>
+                                <th>Car Model</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr>
+                                <td>1</td>
+                                <td>Jamal Malik</td>
+                                <td>GLK500</td>
+                                <td>12,000,000</td>
+                                <td>19/12/2021</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ben Zama Madrid</td>
+                                <td>GLK500</td>
+                                <td>12,000,000</td>
+                                <td>19/12/2021</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Crous Toni</td>
+                                <td>GLK500</td>
+                                <td>12,000,000</td>
+                                <td>19/12/2021</td>
+                            </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div id="payReport" class="hidden">
-                <table id="reportTablepay" class="table table-responsive table-strip table-borderd">
-                    <thead>
-                        <tr>
-                            <th>S/N</th>
-                            <th>Full Name</th>
-                            <th>Car Model</th>
-                            <th>Amount</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td>1</td>
-                            <td>Jamal Malik</td>
-                            <td>GLK500</td>
-                            <td>12,000,000</td>
-                            <td>19/12/2021</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Ben Zama Madrid</td>
-                            <td>GLK500</td>
-                            <td>12,000,000</td>
-                            <td>19/12/2021</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Crous Toni</td>
-                            <td>GLK500</td>
-                            <td>12,000,000</td>
-                            <td>19/12/2021</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
+          
         </div>
     </div>
 </body>
