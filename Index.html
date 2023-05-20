@@ -1,13 +1,9 @@
 <html lang="en">
-
 <head>
-
     <!--TITLE-->
     <title>MAK-H</title>
-
     <!--SHORTCUT ICON-->
     <link rel="shortcut icon" href="/Images/MAK-H.png" />
-
     <!--META TAGS-->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -18,7 +14,6 @@
     <!--JQUERY-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
-
     <!--FONT AWESOME-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--FILES-->
@@ -27,7 +22,6 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
     <script src="managment.js"></script>
     <!--Bootstrap-->
-
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -88,7 +82,7 @@
                     <td>N 50,000</td>
                     <td>03-MAR-2023</td>
                     <td><center> 
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                          <a title="action" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                         aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-bars"></i>
                     </a>
@@ -125,14 +119,14 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="requestId">Request ID</label>
-                            <input type="number" id="requestId" class="form-control" value="RQ003" disabled />
+                            <input type="number" id="requestId" class="inputstyle" value="RQ003" disabled />
                         </div>
                     </div>
                 </div>
                 <div id="divRequestIDList" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
                     <div class="form-line">
                         <label for="requestList">Payment Type </label>
-                        <select id="requestList" class="form-control">
+                        <select id="requestList" class="inputstyle">
                             <option>--select--</option>
                             <option>Bike Maitainance</option>
                             <option>Salary</option>
@@ -144,14 +138,14 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="requestRemId">Request ID</label>
-                            <input type="number" id="requestRemId" class="form-control" />
+                            <input type="number" id="requestRemId" class="inputstyle" />
                         </div>
                     </div>
                 </div>
                 <div id="divStaffList" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
                     <div class="form-line">
                         <label for="staffList">Staff ID</label>
-                        <select id="staffList" class="form-control">
+                        <select id="staffList" class="inputstyle">
                             <option>--select--</option>
                             <option>MAK001</option>
                             <option>MAK002</option>
@@ -167,7 +161,7 @@
                     <div class="form-group ">
                         <div class="form-line">
                             <label for="ReqAmout">Amount</label>
-                            <input type="number" id="ReqAmout" class="form-control" />
+                            <input type="number" id="ReqAmout" class="inputstyle" />
                         </div>
                     </div>
                 </div>
@@ -175,7 +169,7 @@
                 <div id="divPaymentPrio" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
                     <div class="form-line">
                         <label for="payPraioList">Praiority</label>
-                        <select id="payPraioList" class="form-control">
+                        <select id="payPraioList" class="inputstyle">
                             <option>--select--</option>
                             <option>Heigh</option>
                             <option>Medium</option>
@@ -195,20 +189,25 @@
 
         </div>
         <div id="orderEntryDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
-            <span class="headText"> <b>Order</b> </span> <button type="button" id="backToOder" onclick="backToOder()"
-                id="button-1" class="btn  btn-md waves-effect pull-right hidden">Back To Oders</button> <button
-                type="button" id="viewPending" onclick="viewPending()" id="button-1"
-                class="btn  btn-md waves-effect pull-right">View Pending Payment</button>
-            <hr>
+           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 orderEntryDivHead">
+            <span class="headText"> <b>Order</b> </span> 
+            <button type="button" id="backToOder" onclick="backToOder()"
+                 class="btn  btn-md  pull-right hidden">Back To Oders</button>
+                 <button type="button" id="viewPending" onclick="viewPending()"
+                 class="btn  btn-md  pull-right">View Pending Payment</button>
+           </div>
+           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 orderEntryContainer">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " id="Odiv">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <span class="headText"><b>Entery Order</b> </span><br>
-                    <hr>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 disorder">
+                    <span class="headText"><b>Dispatch Order</b> </span><br>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sporder">
+                    
                 </div>
                 <div id="divridersList" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
                     <div class="form-line">
                         <label for="ridersList">Riders Name </label>
-                        <select id="ridersList" class="form-control">
+                        <select id="ridersList" class="inputstyle">
                             <option>--select--</option>
                             <option>Muhammad</option>
                             <option>an Hajiya</option>
@@ -220,7 +219,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="ObikeNumber">Bike Number </label>
-                            <select id="ObikeNumber" class="form-control">
+                            <select id="ObikeNumber" class="inputstyle">
                                 <option>--select--</option>
                                 <option>BVC45ER</option>
                                 <option>BVE54CV</option>
@@ -233,7 +232,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="paymentStatus">Payment Status </label>
-                            <select id="paymentStatus" class="form-control">
+                            <select id="paymentStatus" class="inputstyle">
                                 <option>--select--</option>
                                 <option>Paid</option>
                                 <option>Pending</option>
@@ -245,7 +244,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="orderId">Order ID</label>
-                            <input type="number" id="orderId" class="form-control" value="DL003" disabled />
+                            <input type="number" id="orderId" class="inputstyle" value="DL003" disabled />
                         </div>
                     </div>
                 </div>
@@ -253,7 +252,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="deliveryCharges">Delivery Charges </label>
-                            <input type="number" id="deliveryCharges" class="form-control" value="500" disabled />
+                            <input type="number" id="deliveryCharges" class="inputstyle" value="500" disabled />
                         </div>
                     </div>
                 </div>
@@ -261,7 +260,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="riderCommission">Rider Commission </label>
-                            <input type="number" id="riderCommission" class="form-control" value="100" disabled />
+                            <input type="number" id="riderCommission" class="inputstyle" value="100" disabled />
                         </div>
                     </div>
                 </div>
@@ -269,7 +268,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="sourceLocation">Pickup Location</label>
-                            <select id="sourceLocation" class="form-control">
+                            <select id="sourceLocation" class="inputstyle">
                                 <option>--select--</option>
                                 <option>Gwale</option>
                                 <option>Dalala</option>
@@ -281,7 +280,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="destinationLocation">Delivery Location </label>
-                            <select id="destinationLocation" class="form-control">
+                            <select id="destinationLocation" class="inputstyle">
                                 <option>--select--</option>
                                 <option>Gwale</option>
                                 <option>Dalala</option>
@@ -299,11 +298,14 @@
 
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden" id="Vdiv">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 disorder">
                     <span class="headText"><b>Pending Payment</b> </span><br>
-                    <hr>
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sporder">
+                    
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tabDivOrder">
                     <table class="table table-bordered table-striped">
                         <tr>
                             <th>Order ID</th>
@@ -331,6 +333,8 @@
                     </table>
                 </div>
             </div>
+           </div>
+         
 
         </div>
         <div id="dashboardDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
@@ -340,92 +344,93 @@
             </div>
         </div>
         <div id="bikeMainDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
-            <span class="headText"><b>Bike Maintenance</b> </span>
-            <hr>
-
-            <div id="divbikeNumberM" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <div class="form-group form-float">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bikeMainDivHead">
+                <span class="headText"><b>Bike Maintenance</b> </span>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bikeMainDivContaina">
+                <div id="divbikeNumberM" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group ">
+                        <div class="form-line">
+                            <label for="bikeNumberM">Bike List </label>
+                            <select id="bikeNumberM" class="inputstyle">
+                                <option>--select--</option>
+                                <option>BVC45ER</option>
+                                <option>BVE54CV</option>
+                                <option>BVC21XZ</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="divridersListM" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
                     <div class="form-line">
-                        <label for="bikeNumberM">Bike List </label>
-                        <select id="bikeNumberM" class="form-control">
+                        <label for="ridersListM">Riders Name </label>
+                        <select id="ridersListM" class="inputstyle">
                             <option>--select--</option>
-                            <option>BVC45ER</option>
-                            <option>BVE54CV</option>
-                            <option>BVC21XZ</option>
+                            <option>Muhammad</option>
+                            <option>an Hajiya</option>
+                            <option>Kabir</option>
                         </select>
                     </div>
                 </div>
-            </div>
-            <div id="divridersListM" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
-                <div class="form-line">
-                    <label for="ridersListM">Riders Name </label>
-                    <select id="ridersListM" class="form-control">
-                        <option>--select--</option>
-                        <option>Muhammad</option>
-                        <option>an Hajiya</option>
-                        <option>Kabir</option>
-                    </select>
-                </div>
-            </div>
-            <div id="divbikeCondition" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
-                <div class="form-line">
-                    <label for="bikeCondition">Bike Condition </label>
-                    <select id="bikeCondition" class="form-control">
-                        <option>--select--</option>
-                        <option>Good</option>
-                        <option>Bad</option>
-                    </select>
-                </div>
-            </div>
-            <div id="divbsMeterNumber" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <div class="form-group form-float">
+                <div id="divbikeCondition" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
                     <div class="form-line">
-                        <label for="bsMeterNumber">Bike Start Meter Number </label>
-                        <input type="number" id="bsMeterNumber" class="form-control"
-                            placeholder="Bike Start Meter Number" />
+                        <label for="bikeCondition">Bike Condition </label>
+                        <select id="bikeCondition" class="inputstyle">
+                            <option>--select--</option>
+                            <option>Good</option>
+                            <option>Bad</option>
+                        </select>
                     </div>
                 </div>
-            </div>
-            <div id="divfuelLevel" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
-                <div class="form-line">
-                    <label for="fuelLevel">Fuel Level </label>
-                    <select id="fuelLevel" class="form-control">
-                        <option>--select--</option>
-                        <option>Full</option>
-                        <option>Half And Quarter</option>
-                        <option>Half</option>
-                        <option>Quarter</option>
-                        <option>Reserve</option>
-                    </select>
-                </div>
-            </div>
-
-            <div id="divenginOil" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
-                <div class="form-line">
-                    <label for="enginOil">Engin Oil Condition </label>
-                    <select id="enginOil" class="form-control">
-                        <option>--select--</option>
-                        <option>Good</option>
-                        <option>Avrage</option>
-                        <option>Bad</option>
-                    </select>
-                </div>
-            </div>
-            <div id="divexplain" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <div class="form-group form-float">
-                    <div class="form-line">
-                        <label for="explain">Bike Condition Comment</label>
-                        <input type="text" id="explain" class="form-control" />
+                <div id="divbsMeterNumber" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <div class="form-line">
+                            <label for="bsMeterNumber">Bike Start Meter Number </label>
+                            <input type="number" id="bsMeterNumber" class="inputstyle"
+                                placeholder="Bike Start Meter Number" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 ">
-                <div class="form-group">
-                    <button type="button" id="submitMaintainance" onclick="submitMaintanance()"
-                        class="btn  btn-md waves-effect pull-right">Submit</button>
+                <div id="divfuelLevel" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
+                    <div class="form-line">
+                        <label for="fuelLevel">Fuel Level </label>
+                        <select id="fuelLevel" class="inputstyle">
+                            <option>--select--</option>
+                            <option>Full</option>
+                            <option>Half And Quarter</option>
+                            <option>Half</option>
+                            <option>Quarter</option>
+                            <option>Reserve</option>
+                        </select>
+                    </div>
                 </div>
+                <div id="divenginOil" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
+                    <div class="form-line">
+                        <label for="enginOil">Engin Oil Condition </label>
+                        <select id="enginOil" class="inputstyle">
+                            <option>--select--</option>
+                            <option>Good</option>
+                            <option>Avrage</option>
+                            <option>Bad</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="divexplain" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group ">
+                        <div class="form-line">
+                            <label for="explain">Bike Condition Comment</label>
+                            <input type="text" id="explain" class="inputstyle" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="form-group">
+                        <button type="button" id="submitMaintainance" onclick="submitMaintanance()"
+                            class="btn  btn-md waves-effect pull-right">Submit</button>
+                    </div>
+                </div>
+    
             </div>
-
 
         </div>
         <div id="staffDiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
@@ -435,25 +440,25 @@
                 <br>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>First Name</label>
-                    <input type="text" placeholder="First Name" class="form-control" />
+                    <input type="text" placeholder="First Name" class="inputstyle" />
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Middle Name</label>
-                    <input type="text" placeholder="Middle Name" class="form-control" />
+                    <input type="text" placeholder="Middle Name" class="inputstyle" />
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Last Name</label>
-                    <input type="text" placeholder="Last Name" class="form-control" />
+                    <input type="text" placeholder="Last Name" class="inputstyle" />
 
                 </div>
                 <br>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Staff ID</label>
-                    <input type="text" placeholder="Staff ID" class="form-control" />
+                    <input type="text" placeholder="Staff ID" class="inputstyle" />
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Designation</label>
-                    <select class="form-control">
+                    <select class="inputstyle">
                         <option value="">-- Designation Type --</option>
                         <option value="1">Managment</option>
                         <option value="2">Admin</option>
@@ -462,54 +467,54 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Address</label>
-                    <input type="text" placeholder="Address" class="form-control" />
+                    <input type="text" placeholder="Address" class="inputstyle" />
 
                 </div>
 
                 <br>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>E-Mail</label>
-                    <input type="email" placeholder="E-Mail" class="form-control" />
+                    <input type="email" placeholder="E-Mail" class="inputstyle" />
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Phone Number</label>
-                    <input type="number" placeholder="Phone Number" class="form-control" />
+                    <input type="number" placeholder="Phone Number" class="inputstyle" />
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Alternative Number</label>
-                    <input type="text" placeholder="Alternative Number" class="form-control" />
+                    <input type="text" placeholder="Alternative Number" class="inputstyle" />
                 </div>
 
                 <br>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Garantor Name</label>
-                    <input type="text" placeholder="Garantor Name" class="form-control" />
+                    <input type="text" placeholder="Garantor Name" class="inputstyle" />
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Garanto Address</label>
-                    <input type="text" placeholder="Garantor Address" class="form-control" />
+                    <input type="text" placeholder="Garantor Address" class="inputstyle" />
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Garanto Phone</label>
-                    <input type="text" placeholder="Garantor Address" class="form-control" />
+                    <input type="text" placeholder="Garantor Address" class="inputstyle" />
                 </div>
                 <br>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Next Of Kin Name</label>
-                    <input type="text" placeholder="Garantor Name" class="form-control" />
+                    <input type="text" placeholder="Garantor Name" class="inputstyle" />
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Next Of Kin Address</label>
-                    <input type="text" placeholder="Garantor Address" class="form-control" />
+                    <input type="text" placeholder="Garantor Address" class="inputstyle" />
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Next Of Kin Phone</label>
-                    <input type="text" placeholder="Garantor Address" class="form-control" />
+                    <input type="text" placeholder="Garantor Address" class="inputstyle" />
                 </div>
                 <br>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label>Date Of Joining</label>
-                    <input type="text" placeholder="Date Of Joining" class="form-control" />
+                    <input type="text" placeholder="Date Of Joining" class="inputstyle" />
                 </div>
                 <div class="btnclass col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <br>
@@ -525,7 +530,7 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <label for="reportTypeID">Report Type</label>
-                        <select id="reportTypeID" class="form-control">
+                        <select id="reportTypeID" class="inputstyle">
                             <option value="">-- Report Type --</option>
                             <option value="1">Payment</option>
                             <option value="2">Staff</option>
@@ -539,7 +544,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="reportrider">Select Rider</label>
-                            <select id="reportrider" class="form-control">
+                            <select id="reportrider" class="inputstyle">
                                 <option value="">-- Report Type --</option>
                                 <option value="1">Muhamad</option>
                                 <option value="2">Umar</option>
@@ -553,7 +558,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="startDate">From</label>
-                            <input class="form-control" id="startDate" type="date">
+                            <input class="inputstyle" id="startDate" type="date">
 
                         </div>
                     </div>
@@ -564,7 +569,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="endDate">To</label>
-                            <input class="form-control" id="endDate" type="date">
+                            <input class="inputstyle" id="endDate" type="date">
 
                         </div>
                     </div>
@@ -708,7 +713,7 @@
                             <td>Registration</td>
                             <td class="dropdown">
                                 <center>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                    <a title="action" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-bars"></i>
                                     </a>
@@ -732,10 +737,10 @@
                             <td>ZIMAN001</td>
                             <td>Mustapha Isha </td>
                             <td>Registration</td>
-                            <td><input type="checkbox" checked /></td>
+                            <td><input aria-label="inpcheck" type="checkbox" checked /></td>
                             <td class="dropdown">
                                 <center>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                    <a title="action" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-bars"></i>
                                     </a>
@@ -759,10 +764,10 @@
                             <td>ZIMAN001</td>
                             <td>Mustapha Isha </td>
                             <td>Registration</td>
-                            <td><input type="checkbox" checked /></td>
+                            <td><input aria-label="inpche" type="checkbox" checked /></td>
                             <td class="dropdown">
                                 <center>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                    <a title="action" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-bars"></i>
                                     </a>
