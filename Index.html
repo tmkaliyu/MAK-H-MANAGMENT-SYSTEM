@@ -80,12 +80,13 @@
                     <td>Heigh</td>
                     <td>N 50,000</td>
                     <td>03-MAR-2023</td>
-                    <td><center> 
+                    <td>
+                    <center> 
                           <a title="action" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                         aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-bars"></i>
                     </a>
-                    <ul class="dropdown-menu pull-right">
+                    <ul class="dropdown-menu pull-right col-lg-1">
                         <li><a href="#" class="waves-effect waves-block edit-user"
                                 data-user-id="@user.Id" data-toggle="modal"
                                 data-target="#UserEditModal"><i class="fas fa-approve"></i>Approve</a></li>
@@ -93,7 +94,8 @@
                                 data-user-id="@user.Id" data-user-name="@user.UserName"><i
                                     class="fas fa-reject" ></i>Reject</a></li>
                     </ul>
-                </center></td>
+                    </center>
+                </td>
                 </tr>
             </table>
             <div id="rejectDivRe" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden">
@@ -112,12 +114,7 @@
             <span class="headText">Request Payment</span>
            </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 proMainDivContaina">
-                <div id="divorderId" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="form-line">
-                            <label for="requestId">Request ID</label>
-                            <input type="number" id="requestId" class="inputstyle" value="RQ003" disabled />
-                        </div>
-                </div>
+             
                 <div id="divRequestIDList" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
                     <div class="form-line">
                         <label for="requestList">Payment Type </label>
@@ -128,14 +125,6 @@
                             <option>Other Payment</option>
                         </select>
                     </div>
-                </div>
-                <div id="divRemarkRequest" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                    
-                        <div class="form-line">
-                            <label for="requestRemId">Request ID</label>
-                            <input type="number" id="requestRemId" class="inputstyle" />
-                        </div>
-                    
                 </div>
                 <div id="divStaffList" class="col-lg-3 col-md-6 col-sm-12 col-xs-12 ">
                     <div class="form-line">
@@ -166,6 +155,14 @@
                             <option>Low</option>
                         </select>
                     </div>
+                </div>
+                <div id="divRemarkRequest" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    
+                    <div class="form-line">
+                        <label for="requestRemId">Request Remark</label>
+                        <input type="text" id="requestRemId" class="inputstyle" />
+                    </div>
+                
                 </div>
                 <div class="col-sm-12 ">
                     <div class="form-group">
@@ -518,62 +515,95 @@
             </div>
             
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportDivContainer">
-                <div id="divreportTypeID" class="col-sm-3 ">
+                <div id="divreportTypeID" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label for="reportTypeID">Report Type</label>
-                            <select id="reportTypeID" class="inputstyle">
+                            <select id="reportTypeID" class="inputstyle" onchange="reportType()">
                                 <option value="">-- Report Type --</option>
                                 <option value="1">Payment</option>
-                                <option value="2">Staff</option>
+                                <option value="2">Rider</option>
                                 <option value="3">Order</option>
                             </select>
                         </div>
                     </div>
                 </div>
-                <div class="searchDiv hidden">
-                    <div id="divreportrider" class="col-sm-3 ">
-                        <div class="form-group form-float">
+                <div id="searchDiv" class="searchDiv hidden">
+                   
+                 <div id="paymenSerch" class=" hidden">
+                        <div id="divreportrider" class="col-sm-3 ">
+                                <div class="form-group ">
+                                    <div class="form-line">
+                                        <label for="reportPstatus">Select Status</label>
+                                        <select id="reportPstatus" class="inputstyle">
+                                            <option value="">-- Payment Status --</option>
+                                            <option value="1">Pending</option>
+                                            <option value="2">Successful</option>
+                                            <option value="3">Failed</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <span id="apperror-pStatus" class="hidden">Status is required </span>
+                            </div>
+                        
+                </div>
+                 
+                <div id="riderSerch" class=" hidden">
+                    <div id="divreportstaffID" class="col-sm-3 ">
+                        <div class="form-group ">
                             <div class="form-line">
                                 <label for="reportrider">Select Rider</label>
                                 <select id="reportrider" class="inputstyle">
-                                    <option value="">-- Report Type --</option>
-                                    <option value="1">Muhamad</option>
-                                    <option value="2">Umar</option>
-                                    <option value="3">Musa</option>
+                                    <option value="">-- Rider ID --</option>
+                                    <option value="1">MAK001H</option>
+                                    <option value="2">MAK002H</option>
+                                    <option value="3">MAK003H</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-    
+                 
+                </div>
+                <div id="orderSerch" class=" hidden">
+                    <div id="divreportstaffID" class="col-sm-3 ">
+                        <div class="form-group ">
+                            <div class="form-line">
+                                <label for="orderIdSea">Order ID</label>
+                                <input class="inputstyle" id="orderIdSea" type="Text">
+                            </div>
+                        </div>
+                    </div>
+                 
+                </div>
+
                     <div id="divdate" class="col-sm-3 ">
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <label for="startDate">From</label>
                                 <input class="inputstyle" id="startDate" type="date">
-    
+
                             </div>
                         </div>
                         <span id="apperror-sDate" class="hidden">From Date is required </span>
-    
+
                     </div>
                     <div id="divdate" class="col-sm-3 ">
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <label for="endDate">To</label>
                                 <input class="inputstyle" id="endDate" type="date">
-    
+
                             </div>
                         </div>
                         <span id="apperror-eDate" class="hidden">To Date is required </span>
-    
+
                     </div>
-    
-                    <div class="col-sm-2 ">
-                        <div class="form-group">
-                            <button type="button" id="btnreport" onclick="retriveReport()" id="button-1"
-                                class="btn btn-success btn-md waves-effect ">Search</button>
-                        </div>
+                
+                <div class="col-sm-2 ">
+                    <div class="form-group">
+                        <button type="button" id="btnreport" onclick="retriveReport()" id="button-1"
+                            class="btn btn-success btn-md waves-effect ">Search</button>
                     </div>
                 </div>
                 <div class="loadingid hidden">
@@ -620,44 +650,6 @@
                             <tr>
                                 <td>3</td>
                                 <td>Benz</td>
-                                <td>GLK500</td>
-                                <td>12,000,000</td>
-                                <td>19/12/2021</td>
-                            </tr>
-    
-                        </tbody>
-                    </table>
-                </div>
-                <div id="payReport" class="hidden">
-                    <table id="reportTablepay" class="table table-responsive table-strip table-borderd">
-                        <thead>
-                            <tr>
-                                <th>S/N</th>
-                                <th>Full Name</th>
-                                <th>Car Model</th>
-                                <th>Amount</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-    
-                            <tr>
-                                <td>1</td>
-                                <td>Jamal Malik</td>
-                                <td>GLK500</td>
-                                <td>12,000,000</td>
-                                <td>19/12/2021</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Ben Zama Madrid</td>
-                                <td>GLK500</td>
-                                <td>12,000,000</td>
-                                <td>19/12/2021</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Crous Toni</td>
                                 <td>GLK500</td>
                                 <td>12,000,000</td>
                                 <td>19/12/2021</td>
