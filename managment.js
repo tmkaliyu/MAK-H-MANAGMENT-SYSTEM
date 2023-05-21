@@ -286,3 +286,37 @@ function backToOder(){
 function rejectReq(){
     $("#rejectDivRe").removeClass("hidden");
     }
+
+    // report funtion
+
+    function reportType(){
+        var seachType = $("#reportTypeID").val()
+
+        console.log(seachType);
+        if(seachType == 1){
+
+            $("#searchDiv").removeClass("hidden");
+            $("#paymenSerch").removeClass("hidden");
+            $("#riderSerch").addClass("hidden");
+            $("#orderSerch").addClass("hidden");
+
+        }else if(seachType == 2){
+            $("#searchDiv").removeClass("hidden");
+            $("#paymenSerch").addClass("hidden");
+            $("#riderSerch").removeClass("hidden");
+            $("#orderSerch").addClass("hidden");
+        }else if(seachType == 3){
+            $("#searchDiv").removeClass("hidden");
+            $("#paymenSerch").addClass("hidden");
+            $("#riderSerch").addClass("hidden");
+            $("#orderSerch").removeClass("hidden");
+        }else{
+            $("#searchDiv").addClass("hidden");
+            $("#paymenSerch").addClass("hidden");
+            $("#riderSerch").addClass("hidden");
+            $("#orderSerch").addClass("hidden");
+        }
+
+        
+
+    }
